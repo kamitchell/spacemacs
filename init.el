@@ -13,14 +13,8 @@
 ;; (package-initialize)
 
 ;; Avoid garbage collection during startup.
-(setq gc-cons-threshold 402653184
-      gc-cons-percentage 0.6)
-(add-hook 'emacs-startup-hook
-          (lambda ()
-            ;; Increase gc-cons-threshold from default, depending on your system you may set it back to a
-            ;; lower value in your dotfile (function `dotspacemacs/user-config')
-            (setq gc-cons-threshold 100000000
-                  gc-cons-percentage 0.1)))
+;; see `SPC h . dotspacemacs-gc-cons' for more info
+(setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
 
 (defconst spacemacs-version         "0.200.13" "Spacemacs version.")
 (defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
